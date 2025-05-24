@@ -1,0 +1,249 @@
+/* AI Copilot Panel Styles */
+.ai-copilot-panel {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  max-height: 500px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ai-copilot-minimized {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Header */
+.ai-header {
+  padding: 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #212529;
+}
+
+.ai-header p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.ai-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.minimize-toggle, .close-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #6c757d;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.minimize-toggle:hover, .close-btn:hover {
+  background: #e9ecef;
+}
+
+/* Avatar */
+.ai-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Messages */
+.ai-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+}
+
+.ai-message {
+  display: flex;
+  gap: 8px;
+  max-width: 80%;
+}
+
+.ai-message.ai {
+  align-self: flex-start;
+}
+
+.ai-message.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.ai-message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-message-text {
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.ai-message.ai .ai-message-text {
+  background: #f1f3f5;
+  border-top-left-radius: 4px;
+  color: #212529;
+}
+
+.ai-message.user .ai-message-text {
+  background: #4dabf7;
+  color: white;
+  border-top-right-radius: 4px;
+}
+
+.ai-message-time {
+  font-size: 11px;
+  color: #adb5bd;
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Suggestions */
+.ai-suggestions {
+  padding: 0 16px 12px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.ai-suggestions p {
+  font-size: 12px;
+  color: #6c757d;
+  margin-bottom: 8px;
+}
+
+.ai-suggestion-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ai-suggestion-chips button {
+  background: #f1f3f5;
+  border: none;
+  border-radius: 16px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ai-suggestion-chips button:hover {
+  background: #e9ecef;
+}
+
+/* Input Area */
+.ai-input-area {
+  padding: 12px;
+  display: flex;
+  gap: 8px;
+  background: #fff;
+}
+
+.ai-input-area input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  outline: none;
+  font-size: 14px;
+}
+
+.ai-input-area input:focus {
+  border-color: #4dabf7;
+}
+
+.ai-input-area button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4dabf7;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.ai-input-area button:disabled {
+  background: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Minimized State */
+.ai-copilot-minimized .minimize-toggle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .ai-copilot-panel {
+    width: calc(100vw - 40px);
+    max-height: 70vh;
+    bottom: 80px;
+    right: 20px;
+  }
+  
+  .ai-copilot-minimized {
+    bottom: 20px;
+    right: 20px;
+  }
+}
